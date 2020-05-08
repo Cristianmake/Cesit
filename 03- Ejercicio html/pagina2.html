@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Página 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+  <body>
+    <h3>Gracias por visitar mi Perfil</h3>
+      <ul>
+      <li><a href="./index.html" style="color: purple; ;">Ir a Inicio</a></li>
+      <br>
+      <li><a href="pagina3.html" style="color: purple; ;">Ir a Servicios</a></li>
+      <br>
+      <li><a href="pagina4.html" style="color: purple; ;">Ir a Productos</a></li>
+      <br>
+      </ul>
+    <style type="text/css">
+      body {
+        color: blue;
+        background-color: silver
+        }
+        h3{
+          color: purple;  
+        }
+      </style>
+
+<center><form id="formPersonal">
+  <p>
+      <label for="">Nombre:</label>
+      <input type="text" id="nombre" />
+  </p>
+  <p>
+      <label for="">Apellido:</label>
+      <input type="text" id="apellido" />
+  </p>
+  <p>
+      <label for="">Domicilio:</label>
+      <input type="text" id="domicilio" />
+  </p>
+  <p>
+    <label for="">Cuil:</label>
+    <input type="text" id="cuil" />
+  </p>
+  <p>
+  <label for="">Teléfono:</label>
+  <input type="text" id="teléfono" />
+  </p>
+  <p>
+      <label for="">Sexo</label><br />
+      <select name="" id="sexo">
+          <option value="femenino">Femenito</option>
+          <option value="masculio">Masculino</option>
+      </select>
+  </p>
+</form>
+
+<button onclick="enviarDatos()">Enviar</button></center>
+
+<h3 id="resultado"></h3>
+
+<script>
+
+  function enviarDatos() {
+
+      let nombre = document.getElementById("nombre").value;
+      let apellido = document.getElementById("apellido").value;
+      let apellido = document.getElementById("domicilio").value;
+      let apellido = document.getElementById("cuil").value;
+      let apellido = document.getElementById("teléfono").value;
+      let sexo = document.getElementById("sexo").value;
+
+      let request = { nombre: nombre, apellido: apellido, domicilio: domicilio, cuil: cuil, teléfono: teléfono, sexo: sexo };
+
+      document.getElementById("resultado").innerHTML = JSON.stringify(request);
+
+      setTimeout(function() {
+          document.getElementById("resultado").innerHTML = JSON.stringify(request) + "... Enviada exitosamente";
+      }, 3000);
+
+  }
+</script>
+  </body>
+</html>
